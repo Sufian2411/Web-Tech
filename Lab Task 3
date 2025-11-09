@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Donation Form</title>
+</head>
+<body>
+
+<h1>Donation Form</h1>
+
+<form action="#" method="post">
+
+<h2>Donor Information</h2>
+<label>First Name:</label>
+<input type="text" name="fname"><br>
+
+<label>Last Name:</label>
+<input type="text" name="lname"><br>
+
+<label>Company:</label>
+<input type="text" name="company"><br>
+
+<label>Address:</label>
+<input type="text" name="address1"><br>
+
+<label>City:</label>
+<input type="text" name="city"><br>
+
+<label>State:</label>
+<select name="state">
+  <option>Dhaka</option>
+  <option>Chattogram</option>
+  <option>Khulna</option>
+</select><br>
+
+<label>Country:</label>
+<select name="country">
+  <option>Bangladesh</option>
+  <option>India</option>
+  <option>USA</option>
+</select><br>
+
+<label>Phone:</label>
+<input type="text" name="phone"><br>
+
+<label>Donation Amount:</label><br>
+<input type="radio" name="amount" value="50"> $50
+<input type="radio" name="amount" value="75"> $75
+<input type="radio" name="amount" value="100"> $100
+<input type="radio" name="amount" value="250"> $250
+<input type="radio" name="amount" value="other"> Other<br>
+
+<label>Other Amount:</label>
+<input type="text" name="otheramount"><br>
+
+<label>Recurring:</label>
+<input type="checkbox" name="recurring"> Yes
+<select name="payment">
+  <option>Monthly</option>
+  <option>Quarterly</option>
+  <option>Yearly</option>
+</select><br>
+
+<h2>Honor / Memory</h2>
+<label>Type:</label><br>
+<input type="radio" name="honor" value="honor"> Honor
+<input type="radio" name="honor" value="memory"> Memory<br>
+
+<label>Name:</label>
+<input type="text" name="honorname"><br>
+
+<h2>Additional Information</h2>
+<label>Comments:</label><br>
+<textarea name="comments" rows="4" cols="40"></textarea><br>
+
+<label>Contact by:</label><br>
+<input type="checkbox" name="contact" value="email"> Email
+<input type="checkbox" name="contact" value="mail"> Mail
+<input type="checkbox" name="contact" value="phone"> Phone<br><br>
+
+<input type="submit" value="Donate">
+<input type="reset" value="Reset">
+
+</form>
+
+</body>
+</html>
