@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Product Information Box</title>
+
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            background: #f2f2f2;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .product{
+            width: 220px;
+            display: inline-block;
+            background: #fff;
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin: 10px;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+
+        .product:hover{
+            outline: 2px solid #007bff;
+            outline-offset: 5px;
+        }
+
+        .product img{
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            margin-bottom: 10px;
+        }
+
+        .product h3{
+            margin: 5px 0;
+        }
+
+        .product p{
+            font-size: 14px;
+            color: #555;
+        }
+
+        .price{
+            font-weight: bold;
+            margin: 8px 0;
+        }
+
+        .product a{
+            text-decoration: none;
+            background: #007bff;
+            padding: 6px 10px;
+            color: #fff;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Product Display Section</h2>
+
+    <div class="product">
+        <img src="https://via.placeholder.com/100" alt="Laptop">
+        <h3>Laptop</h3>
+        <p>High performance laptop for work & study.</p>
+        <div class="price">$999</div>
+        <a href="#">Buy Now</a>
+    </div>
+
+    <div class="product">
+        <img src="https://via.placeholder.com/100" alt="Headphones">
+        <h3>Headphones</h3>
+        <p>Clear sound quality with noise canceling.</p>
+        <div class="price">$199</div>
+        <a href="#">Buy Now</a>
+    </div>
+
+    <div class="product">
+        <img src="https://via.placeholder.com/100" alt="Smartwatch">
+        <h3>Smartwatch</h3>
+        <p>Track fitness, calls & notifications easily.</p>
+        <div class="price">$149</div>
+        <a href="#">Buy Now</a>
+    </div>
+
+</body>
+</html>
