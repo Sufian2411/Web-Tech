@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>User Profile Card</title>
+  <style>
+    /* Basic page layout */
+    body{
+      font-family: "Segoe UI", Roboto, system-ui, -apple-system, "Helvetica Neue", Arial;
+      background: linear-gradient(180deg,#eef2f7 0%, #f8fbff 100%);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      min-height:100vh;
+      margin:0;
+      padding:20px;
+    }
+
+    /* Card container (position: relative required) */
+    .card{
+      position:relative;             /* important for absolute badge */
+      width:320px;
+      background:#ffffff;
+      border-radius:14px;
+      padding:20px;
+      box-shadow: 0 8px 22px rgba(20,30,60,0.08);
+      border: 1px solid rgba(20,30,60,0.06);
+      transition: transform .18s ease, box-shadow .18s ease;
+    }
+    .card:hover{
+      transform: translateY(-6px);
+      box-shadow: 0 18px 40px rgba(20,30,60,0.12);
+    }
+
+    /* Online badge (positioned absolutely) */
+    .badge{
+      position:absolute;     /* as required by task */
+      top:12px;
+      right:12px;
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:6px 10px;
+      background: linear-gradient(180deg,#e8fff2,#dffff0);
+      border-radius:999px;
+      font-size:13px;
+      font-weight:600;
+      color:#0b7a4d;
+      border:1px solid rgba(11,122,77,0.12);
+      box-shadow: 0 3px 8px rgba(11,122,77,0.06);
+    }
+    .badge .dot{
+      width:10px;
+      height:10px;
+      border-radius:50%;
+      background:#18b65b;
+      box-shadow: 0 0 0 4px rgba(24,182,91,0.08);
+    }
+
+    /* Profile row */
+    .profile{
+      display:flex;
+      gap:16px;
+      align-items:center;
+    }
+    .avatar{
+      width:86px;
+      height:86px;
+      border-radius:50%;
+      overflow:hidden;
+      flex-shrink:0;
+      border: 3px solid #fff;
+      box-shadow: 0 6px 18px rgba(20,30,60,0.06);
+      background: linear-gradient(135deg,#eef,#dde);
+    }
+    .avatar img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+    }
+
+    .info h2{
+      margin:0 0 6px 0;
+      font-size:18px;
+      line-height:1;
+      color:#0f1724;
+    }
+    .info p{
+      margin:0;
+      color:#475569;
+      font-size:14px;
+      line-height:1.45;
+      max-width:200px;
+    }
+
+    /* Extra card footer (optional) */
+    .meta{
+      margin-top:14px;
+      display:flex;
+      gap:10px;
+      font-size:13px;
+      color:#64748b;
+    }
+    .meta .item{
+      background:#f8fafc;
+      padding:8px 10px;
+      border-radius:10px;
+      border:1px solid rgba(10,20,40,0.03);
+    }
+
+    /* Responsive smaller screens */
+    @media (max-width:360px){
+      .card{ width:100%; padding:16px; }
+      .avatar{ width:72px; height:72px; }
+      .info p{ max-width:140px; font-size:13px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <!-- absolute badge -->
+    <div class="badge">
+      <span class="dot" aria-hidden="true"></span>
+      Online
+    </div>
+
+    <!-- profile content -->
+    <div class="profile">
+      <div class="avatar">
+        <!-- inline SVG placeholder image (works offline) -->
+        <img src='data:image/svg+xml;utf8,
+          <svg xmlns="http://www.w3.org/2000/svg" width="200" height="200">
+            <defs>
+              <linearGradient id="g" x1="0" x2="1">
+                <stop offset="0" stop-color="%23a8d5ff"/>
+                <stop offset="1" stop-color="%23d8e7ff"/>
+              </linearGradient>
+            </defs>
+            <rect width="100%" height="100%" fill="url(%23g)"/>
+            <g transform="translate(40,36)" fill="%23fff">
+              <circle cx="60" cy="40" r="28"/>
+              <rect x="18" y="84" rx="14" width="84" height="32"/>
+            </g>
+          </svg>' alt="profile photo">
+      </div>
+
+      <div class="info">
+        <h2>Sufian Showrov</h2>
+        <p>ID: 22-48735-3 — Web developer student. Love clean UI and small, clear components.</p>
+      </div>
+    </div>
+
+    <div class="meta" aria-hidden="true">
+      <div class="item">Location: Dhaka</div>
+      <div class="item">Member: 2025</div>
+    </div>
+  </div>
+
+</body>
+</html>
