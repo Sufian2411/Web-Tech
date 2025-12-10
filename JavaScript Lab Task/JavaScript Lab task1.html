@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration Form</title>
+    <style>
+        body { font-family: Arial; padding: 20px; }
+        .error { color: red; font-size: 14px; }
+    </style>
+</head>
+<body>
+
+<h2>Student Registration</h2>
+
+<form id="form">
+    Full Name:<br>
+    <input type="text" id="name"><br>
+    <span class="error" id="nameErr"></span><br>
+
+    Email:<br>
+    <input type="text" id="email"><br>
+    <span class="error" id="emailErr"></span><br>
+
+    Password:<br>
+    <input type="password" id="pass"><br>
+    <span class="error" id="passErr"></span><br>
+
+    Confirm Password:<br>
+    <input type="password" id="cpass"><br>
+    <span class="error" id="cpassErr"></span><br>
+
+    Phone Number:<br>
+    <input type="text" id="phone"><br>
+    <span class="error" id="phoneErr"></span><br>
+
+    <button type="submit">Submit</button>
+</form>
+
+<h3 id="success" style="color:green;"></h3>
+
+<script>
+document.getElementById("form").addEventListener("submit", function(e){
+    e.preventDefault();
+
+    let ok = true;
+
+    let name = document.getElementById("name").value;
+    let email = document.getElementById("email").value;
+    let pass = document.getElementById("pass").value;
+    let cpass = document.getElementById("cpass").value;
+    let phone = document.getElementById("phone").value;
+
+    document.getElementById("nameErr").innerText = "";
+    document.getElementById("emailErr").innerText = "";
+    document.getElementById("passErr").innerText = "";
+    document.getElementById("cpassErr").innerText = "";
+    document.getElementById("phoneErr").innerText = "";
+    document.getElementById("success").innerText = "";
+
+    if(name === ""){
+        ok = false;
+        document.getElementById("nameErr").innerText = "Name required";
+    }
+
+    if(email.indexOf("@") === -1 || email.indexOf(".") === -1){
+        ok = false;
+        document.getElementById("emailErr").innerText = "Invalid email";
+    }
+
+    if(pass.length < 6){
+        ok = false;
+        document.getElementById("passErr").innerText = "Password must be 6+ chars";
+    }
+
+    if(pass !== cpass){
+        ok = false;
+        document.getElementById("cpassErr").innerText = "Passwords don't match";
+    }
+
+    if(isNaN(phone)){
+        ok = false;
+        document.getElementById("phoneErr").innerText = "Digits only";
+    }
+
+    if(ok){
+        document.getElementById("success").innerText = "Registration Successful!";
+    }
+});
+</script>
+
+</body>
+</html>

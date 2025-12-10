@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dynamic Form</title>
+    <style>
+        body{
+            font-family: Arial;
+            padding: 40px;
+        }
+        .box{
+            margin-top: 10px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Smart Registration Form</h2>
+
+    <label>User Type:</label>
+    <select id="userType" onchange="changeField()">
+        <option value="">Select</option>
+        <option value="student">Student</option>
+        <option value="teacher">Teacher</option>
+    </select>
+
+    <div id="roll" class="box">
+        <label>Roll Number:</label>
+        <input type="text">
+    </div>
+
+    <div id="dept" class="box">
+        <label>Department:</label>
+        <input type="text">
+    </div>
+
+    <script>
+        function changeField(){
+            let t = document.getElementById("userType").value;
+
+            document.getElementById("roll").style.display =
+                t === "student" ? "block" : "none";
+
+            document.getElementById("dept").style.display =
+                t === "teacher" ? "block" : "none";
+        }
+    </script>
+
+</body>
+</html>
